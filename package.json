@@ -1,0 +1,15 @@
+{
+  "name": "first",
+  "version": "1.0.0",
+  "description": "first project with type script",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "start": "node built/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}
