@@ -22,11 +22,13 @@ export class JobOptions {
     }
 
     display(): void {
-        console.log(`Job options: ${this.waitTime} ${this.timepart}`);
+
+        let lookup = { s: 'seconds', m: 'minutes', ms: 'milliseconds' }
+        console.log(`Every ${this.waitTime} ${lookup[this.timepart]}`);
     }
 
     getTimeMilliseconds(): number {
-       
+
         if (this.timepart == "s") {
             return this.waitTime * 1000;
         }

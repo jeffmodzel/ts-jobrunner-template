@@ -1,25 +1,29 @@
-
 import { JobOptions } from "./jobOptions";
-
+import { IJob } from "./iJob";
 
 export class JobRunner {
-   waitTime: number;
+   options: JobOptions;
+   job: IJob;
 
-   // pass in IJob object
-   constructor(options: JobOptions) {
-      this.waitTime = options.getTimeMilliseconds();
+   constructor(options: JobOptions, job: IJob) {
+      this.options = options;
+      this.job = job;
    }
 
-   //function 
    start(): void {
-      console.log("Starting")
+      console.log("Starting job runner...")
 
-      function intervalFunc() {
-         console.log('Do some important stuff....');
-      }
+      // execute once before starting interval
+      this.job.run();
 
-      setInterval(intervalFunc, this.waitTime);
+      setInterval(
+         () => { this.job.run(); },
+         this.options.getTimeMilliseconds());
+   }
 
+   display(): void {
+      this.job.display();
+      this.options.display();
    }
 
 }
