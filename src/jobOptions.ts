@@ -22,7 +22,6 @@ export class JobOptions {
     }
 
     display(): void {
-
         let lookup = { s: 'seconds', m: 'minutes', ms: 'milliseconds' }
         console.log(`Every ${this.waitTime} ${lookup[this.timepart]}`);
     }
