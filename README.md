@@ -4,8 +4,8 @@ Template for simple job runner in TypeScript
 
 npm install --save-dev typescript
 npm install --save-dev jasmine
-
-
+npm i -D jasmine nyc ts-node
+npm i -D @types/jasmine
 
 # Useful links
 
